@@ -1038,7 +1038,7 @@ function flightCard(f,i,cheap){
   const top=[f===cheap?`<span class="tg2 dark">${f.stops.n===0?"最低價直飛":"最低價"}</span>`:"",bagTag(f)].join("");
   return `<div class="card fc2${f===selF&&both?" sel":""}" data-i="${i}">
     <div class="tags">${top}<span class="srcs">${SRC[f.src]}</span></div>
-    <div class="fcg"><div class="air2"><div class="lg" style="background:${colorOf(f.airline)}">${esc(f.code||initials(f.airline))}${f.code?`<img src="https://pics.avs.io/al_square/80/80/${encodeURIComponent(f.code)}.png" alt="" loading="lazy" onerror="this.remove()">`:""}</div><div class="nm">${parts.map(esc).join("<br>")}</div></div>
+    <div class="fcg"><div class="air2"><div class="lg" style="background:${colorOf(f.airline)}">${esc(f.code||initials(f.airline))}${f.code?`<img src="https://pics.avs.io/al_square/80/80/${encodeURIComponent(f.code)}.png" alt="" onerror="this.remove()">`:""}</div><div class="nm">${parts.map(esc).join("<br>")}</div></div>
       <div class="legs">${legs}</div>
       <div class="pz2"><div class="n num">${fmtS(f.twd)}</div><div class="o">${lastQ.d2?"來回":"單程"}${lastQ.people>1?`・每人 ${fmtM(f.twd/lastQ.people)}`:""}</div>
         ${both?`<button class="pick">${f===selF?"✓ 已選取":"選取"}</button><a class="sm" href="${tripFUrl(f)}" target="_blank" rel="noopener">到 Trip.com 訂票 ↗</a>`
